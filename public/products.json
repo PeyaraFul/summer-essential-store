@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "Peyaraful",
+    "price": 15.00,
+    "rating": 4.5,
+    "stock": 10,
+    "code": 1245,
+    "description": "Stylish UV protection sunglasses perfect for summer outings.",
+    "image": "https://i.postimg.cc/h4dGG16M/sunglass.png",
+    "category": "Accessories",
+    "features": [
+      "Provides UV400 protection against harmful sun rays",
+      "Lightweight frame for comfortable all-day wear",
+      "Stylish modern design suitable for summer fashion",
+      "Durable scratch-resistant lenses"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Portable Cooling Fan",
+    "brand": "CoolBreeze",
+    "price": 20.00,
+    "rating": 4.7,
+    "stock": 15,
+    "code": 1246,
+    "description": "Lightweight portable fan for instant cooling in summer heat.",
+    "image": "https://i.postimg.cc/1Rqzzr2X/fan.png",
+    "category": "Electronics",
+    "features": [
+      "Rechargeable battery for portable use",
+      "Multiple speed settings for customized airflow",
+      "Compact lightweight design for travel",
+      "Quiet operation for indoor and outdoor comfort"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Face Wash",
+    "brand": "GlowPure",
+    "price": 8.00,
+    "rating": 4.0,
+    "stock": 30,
+    "code": 1247,
+    "description": "Refreshing face wash that removes oil and sweat in summer.",
+    "image": "https://i.postimg.cc/dQy00jp1/face-wash.png",
+    "category": "Skincare",
+    "features": [
+      "Deep cleans pores effectively",
+      "Removes excess oil and sweat",
+      "Refreshing formula for summer use",
+      "Suitable for daily skincare routine"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Skin Care Cream",
+    "brand": "DermaSoft",
+    "price": 12.00,
+    "rating": 4.4,
+    "stock": 25,
+    "code": 1248,
+    "description": "Hydrating cream that protects skin from summer dryness.",
+    "image": "https://i.postimg.cc/NGH00kST/skin-creem.png",
+    "category": "Skincare",
+    "features": [
+      "Provides long-lasting skin hydration",
+      "Protects against dryness and roughness",
+      "Smooth lightweight texture",
+      "Suitable for all skin types"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Cotton T-Shirt",
+    "brand": "AirWear",
+    "price": 10.00,
+    "rating": 3.8,
+    "stock": 40,
+    "code": 1249,
+    "description": "Breathable cotton t-shirt perfect for summer comfort.",
+    "image": "https://i.postimg.cc/8k6CCm9Z/t-shirt.png",
+    "category": "Clothing",
+    "features": [
+      "Made from breathable cotton fabric",
+      "Lightweight for hot weather comfort",
+      "Soft texture for everyday wear",
+      "Stylish casual summer design"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Saline Solution",
+    "brand": "Peyaraful",
+    "price": 5.00,
+    "rating": 4.2,
+    "stock": 50,
+    "code": 1250,
+    "description": "Medical saline solution for dehydration support.",
+    "image": "https://i.postimg.cc/KcMYYDwg/saline.png",
+    "category": "Healthcare",
+    "features": [
+      "Supports hydration recovery",
+      "Restores essential electrolytes",
+      "Easy-to-use medical solution",
+      "Reliable for dehydration care"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Swimming Vest",
+    "brand": "AquaSafe",
+    "price": 18.00,
+    "rating": 4.7,
+    "stock": 12,
+    "code": 1251,
+    "description": "Safety swimming vest for kids and adults in water activities.",
+    "image": "https://i.postimg.cc/8k6CCm9v/summer-vest.png",
+    "category": "Sports",
+    "features": [
+      "Provides strong buoyancy support",
+      "Suitable for kids and adults",
+      "Comfortable adjustable straps",
+      "Ideal for swimming and water sports safety"
+    ]
+  }
+]
