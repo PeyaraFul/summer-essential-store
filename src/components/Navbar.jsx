@@ -46,7 +46,7 @@ const Navbar = () => {
 
 
 
-        <a href=""><FaRegUserCircle /></a>
+        <Link href="/profile"><FaRegUserCircle size={35} /></Link>
         <a className="btn">Sign In</a>
      
 
