@@ -1,10 +1,10 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { authClient } from "@/lib/auth-client";
 
 const RegisterPage = () => {
   const {
@@ -12,11 +12,32 @@ const RegisterPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const router = useRouter();
   const onSubmit = async (data) => {
-    // const { name, email, password } = data;
-    
-  };
+  const { name, email, password } = data;
+
+  const { data: res, error } = await authClient.signUp.email({
+    name: name,
+    email: email,
+    password: password,
+    callbackURL: "/",
+  });
+
+  console.log("Response:", res);
+  console.log("Error:", error);
+
+  if (error) {
+    alert(error.message);
+    return;
+
+  }
+
+  if (res) {
+    alert("Registration successful!");
+    router.push("/");
+  }
+};
 
   return (
     <>
@@ -29,7 +50,7 @@ const RegisterPage = () => {
         <label className="label">Your Name</label>
         <input
           {...register("name", { required: "Name is required !" })}
-          name="name"
+         
           type="text"
           className="input"
           placeholder="Your Name"
@@ -39,7 +60,7 @@ const RegisterPage = () => {
         <label className="label">Email</label>
         <input
           {...register("email", { required: "Email is required !" })}
-          name="email"
+          
           type="email"
           className="input"
           placeholder="Email"
@@ -49,14 +70,14 @@ const RegisterPage = () => {
         <label className="label">Password</label>
         <input
           {...register("password", { required: "Password is required !" })}
-          name="password"
+          
           type="password"
           className="input"
           placeholder="Password"
         />
         <p className="text-error">{errors.password?.message}</p>
 
-        <button className="btn btn-neutral mt-4">Register Now</button>
+        <button type="submit" className="btn btn-neutral mt-4">Register Now</button>
       </form>
       <p className="text-center my-4">
         Already have an account?{" "}
