@@ -35,7 +35,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <div className="font-bold text-xl">Summer<span className="text-orange-400">Store</span></div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -67,12 +67,12 @@ const Navbar = () => {
             <Link
               href="/login"
               onClick={async () => await authClient.signOut()}
-              className="btn"
+              className="btn mx-3"
             >
               Sign Out
             </Link>
           ) : (
-            <Link href="/login" className="btn">
+            <Link href="/login" className="btn mx-3">
               Sign In
             </Link>
           )}

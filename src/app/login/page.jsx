@@ -2,64 +2,110 @@
 
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import React from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FcGoogle } from "react-icons/fc";
 
 const LoginPage = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect") || "/";
+
+  const [toast, setToast] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  const googleHandleReg = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+      callbackURL: redirect,
+    });
+  };
+
   const onSubmit = async (data) => {
     const { email, password } = data;
-    //  console.log(data);
-    const { data:res, error } = await authClient.signIn.email({
-      email: email, // required
-      password: password, // required
+
+    setLoading(true);
+
+    const { data: res, error } = await authClient.signIn.email({
+      email,
+      password,
       rememberMe: true,
-      callbackURL: "/",
     });
+
     if (error) {
-      alert("Login error:", error);
-  };
-    if (res) {
-      alert("Login successful!");
+      setLoading(false);
+      alert(error.message || "Login failed!");
+      return;
     }
-  }
+
+    if (res) {
+      setToast(true);
+
+      setTimeout(() => {
+        router.push(redirect);
+      }, 1500);
+    }
+  };
+
   return (
     <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className=" mx-auto mt-10 fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
-      >
-        <legend className="fieldset-legend">Login</legend>
+      {/* Toast message */}
+      {toast && (
+        <div className="toast toast-top toast-end z-50">
+          <div className="alert alert-success">
+            <span>Login successful!</span>
+          </div>
+        </div>
+      )}
 
-        <label className="label">Email</label>
-        <input
-          {...register("email", { required: "Email is required !" })}
-          name="email"
-          type="email"
-          className="input"
-          placeholder="Email"
-        />
-        <p className="text-error">{errors.email?.message}</p>
+      <div className="mx-auto mt-10 fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 shadow-lg">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <legend className="fieldset-legend text-xl font-bold">Login</legend>
 
-        <label className="label">Password</label>
-        <input
-          {...register("password", { required: "Password is required !" })}
-          name="password"
-          type="password"
-          className="input"
-          placeholder="Password"
-        />
-        <p className="text-error">{errors.password?.message}</p>
+          <label className="label mt-3">Email</label>
+          <input
+            {...register("email", {
+              required: "Email is required!",
+            })}
+            type="email"
+            className="input w-full"
+            placeholder="Email"
+          />
+          <p className="text-error text-sm">{errors.email?.message}</p>
 
-        <button className="btn btn-neutral mt-4">Login</button>
-      </form>
+          <label className="label mt-3">Password</label>
+          <input
+            {...register("password", {
+              required: "Password is required!",
+            })}
+            type="password"
+            className="input w-full"
+            placeholder="Password"
+          />
+          <p className="text-error text-sm">{errors.password?.message}</p>
+
+          <button disabled={loading} className="btn btn-neutral w-full mt-4">
+            {loading ? "Logging in..." : "Login"}
+          </button>
+        </form>
+
+        <div className="divider">OR</div>
+
+        <button onClick={googleHandleReg} className="btn btn-sm w-full">
+          <FcGoogle size={20} />
+          Login with Google
+        </button>
+      </div>
+
       <p className="text-center my-4 mb-10">
-        Don&apos;t Have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link href="/register" className="text-blue-500 hover:underline">
           Register here
         </Link>

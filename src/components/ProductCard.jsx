@@ -5,7 +5,7 @@ import React from 'react';
 const ProductCard = ({ product }) => {
     return (
         <div>
-            <div  className="card bg-base-100 w-96 shadow-sm border border-amber-600 p-4 my-4 ">
+            <div  className="card bg-base-100 shadow-sm border border-amber-600 p-4 my-4 ">
             <figure>
               <Image
                 className=" rounded-md"
@@ -18,12 +18,12 @@ const ProductCard = ({ product }) => {
             <div className="card-body">
               <h2 className="card-title">{product.name}</h2>
               
-              <label className="label">
+              <label className="label -mb-7 ml-3 z-10">
                 <span className="label-text">Rating: {product.rating}</span>
               </label>
               <input type="range" min={0} max='5'  step={0.1} defaultValue={product.rating} className="range range-accent range-sm bg-green-200 pointer-events-none" />
               
-              <span className="font-semibold text-xl"> ${(product.price).toFixed(2)} <del className='mx-3'> ${((product.price) + 3).toFixed(2)} </del>  </span>
+              <span className="font-semibold text-xl">Price: ${(product.price).toFixed(2)} <del className='mx-3'> ${((product.price) + 3).toFixed(2)} </del>  </span>
               <div className="card-actions">
                 <Link href={`/products/${product.id}`} className='w-full'>
                 <button className="btn btn-info w-full"> See Details</button>

@@ -8,8 +8,8 @@ const Popular = async () => {
 
   return (
     <>
-      <h1 className="text-2xl mt-6 font-bold text-center">Popular Products</h1>
-      <div className="grid grid-cols-3 gap-6  ">
+      <h1 className="text-3xl font-bold text-center mt-10">Popular Products</h1>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  ">
         {products.filter((product) => product.rating >= 4.5).map((product) => (
           <ProductCard product={product} key={product.id} />
         ))}

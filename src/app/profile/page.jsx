@@ -17,7 +17,9 @@ const ProfilePage = () => {
   return (
     <>
       {user ? (
-        <div className="mx-auto w-[60%] p-4 my-4 border border-amber-700 bg-base-100 shadow-sm">
+        <>
+        <h1 className=' text-center my-4 text-md font-medium' >Your Profile</h1>
+        <div className="mx-auto  p-4 mt-10 mb-20 rounded-md bg-base-100 shadow-2xl">
           <div>
             <Image
               className="mx-auto border border-amber-900 rounded-full"
@@ -35,12 +37,13 @@ const ProfilePage = () => {
             <button className="btn btn-primary mx-auto">Update Profile</button>
           </Link>
         </div>
+        </>
       ) : (
-        <div className="mx-auto w-[60%] p-6 my-10 border border-amber-700 bg-base-100 shadow-sm text-center">
+        <div className="mx-auto w-[60%] p-6 my-20 bg-base-100 shadow-sm text-center">
           <p className="text-xl font-semibold">You are not logged in.</p>
-          <Link href="/login" className="btn btn-primary mt-4">
+          <Link href="/login" className="btn btn-primary mt-6">
             Sign In
-          </Link>
+          </Link> 
         </div>
       )}
     </>
