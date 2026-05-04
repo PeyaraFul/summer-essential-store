@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 
@@ -22,15 +23,15 @@ const Footer = () => {
         <nav>
           <h6 className="footer-title">Social</h6>
           <div className="grid grid-flow-col gap-4">
-            <a>
+            <Link href="https://www.facebook.com/arakash022" target="_blank">
               <FaFacebook size={20} />
-            </a>
-            <a>
+            </Link>
+            <Link href="https://www.linkedin.com/in/md-akash-mia-bd" target="_blank">
               <FaLinkedin size={20} />
-            </a>
-            <a>
+            </Link>
+            <Link href="https://www.youtube.com/@peyaraful" target="_blank">
               <FaYoutube size={25} />
-            </a>
+            </Link>
           </div>
         </nav>
       </footer>
