@@ -3,11 +3,13 @@
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import { FaRegUserCircle } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = () => {
+  const pathname = usePathname()
   const { data: session } = authClient.useSession();
   const user = session?.user ;
   const safeImage =
@@ -40,11 +42,19 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link href="/">Home</Link>
+              <Link href="/" className={`${
+            pathname === "/"
+              ? "underline underline-offset-4 font-semibold"
+              : ""
+          }`}>Home</Link>
             </li>
 
             <li>
-              <Link href="/products">Products</Link>
+              <Link href="/products" className={`${
+            pathname === "/products"
+              ? "underline underline-offset-4 font-semibold"
+              : ""
+          }`}>Products</Link>
             </li>
           </ul>
         </div>
