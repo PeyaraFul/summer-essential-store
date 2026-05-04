@@ -27,16 +27,17 @@ const RegisterPage = () => {
   const router = useRouter();
 
   const onSubmit = async (data) => {
-    const { name, email, password } = data;
+    const { name, email, photo , password } = data;
 
     setLoading(true);
 
-    const { data: res, error } = await authClient.signUp.email({
-      name: name,
-      email: email,
-      password: password,
-      callbackURL: "/login",
-    });
+   const { data:res, error } = await authClient.signUp.email({
+    name: name, // required
+    email: email, // required
+    password: password, // required
+    image: photo,
+    callbackURL: "/",
+});
 
     console.log("Response:", res);
     console.log("Error:", error);
@@ -89,6 +90,23 @@ const RegisterPage = () => {
             placeholder="Email"
           />
           <p className="text-error">{errors.email?.message}</p>
+
+
+
+
+
+
+
+          <label className="label mt-3">Photo Link</label>
+          <input
+            {...register("photo")}
+            type="text"
+            className="input"
+            placeholder="Photo Link"
+          />
+          {/* <p className="text-error">{errors.email?.message}</p> */}
+
+
 
           <label className="label mt-3">Password</label>
           <input

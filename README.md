@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#  SUMMER-ESSENTIAL-STORE
 
-## Getting Started
+##  Project Name
+    Summer Essential store   (a collection of summer products)
+ 
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##  Description
+this is a e-commerce web application. user can create account with name and email.
+Also can log in with google verification. user can see product and order on his choice.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+##  NPM Package (Technologies) Used
+- nextjs
+- react
+- react-hook-form
+- next/navigation
+- better-auth
+- mongodb
+- animate.css
+- react-icons
+- tailwindcss
+- daisyui
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+##  Key Features
+###  1. Home page
+ It shows top products and offer. here has a summer tips section which gives suggestion people to more safe.
+###  2. LOg in system
+user can create a account by google authentication. 
+and only valid user can see products details. 
+###  3. profile
+ by google authentication register its create a profile automatically.
+ after login user can edit profile photo and name in the profile page.  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+##  Live Link
+https://summer-essential-store.vercel.app
+## Repo
+https://github.com/PeyaraFul/summer-essential-store
